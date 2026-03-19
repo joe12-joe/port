@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joris Ambeyi · front‑end 1yr · 2026</title>
+    <title>Joris Ambeyi · front‑end developer</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Font: Plus Jakarta Sans + Syne for bold attitude -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Font: Inter (clean, professional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,147 +16,97 @@
         }
 
         body {
-            background: #0d0b16;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: #f4eaff;
-            line-height: 1.5;
+            background: #0c0c0f;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #e2e2e9;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .logo, .btn, .exp-glow, .section-title {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        /* energetic background mesh */
-        .mesh-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 15% 30%, #ff7b89 0%, transparent 30%),
-                radial-gradient(circle at 80% 10%, #a473ff 0%, transparent 35%),
-                radial-gradient(circle at 40% 80%, #00d4ff 0%, transparent 40%),
-                radial-gradient(circle at 90% 70%, #ffb86b 0%, transparent 35%);
-            opacity: 0.5;
-            filter: blur(70px) brightness(1.2);
-            z-index: -2;
-            animation: meshMove 22s infinite alternate ease-in-out;
-        }
-
-        @keyframes meshMove {
-            0% { transform: scale(1) rotate(0deg); filter: blur(70px) hue-rotate(0deg); }
-            100% { transform: scale(1.2) rotate(5deg); filter: blur(80px) hue-rotate(15deg); }
-        }
-
+        /* subtle grain texture */
         .noise {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wMjUiIC8+PC9zdmc+');
-            opacity: 0.15;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wMTUiIC8+PC9zdmc+');
+            opacity: 0.2;
             z-index: -1;
             pointer-events: none;
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             position: relative;
-            z-index: 10;
+            z-index: 5;
         }
 
-        /* navbar */
+        /* navbar – minimal, glass */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 2.5rem;
-            background: rgba(10, 5, 25, 0.5);
-            backdrop-filter: blur(16px) saturate(200%);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 150, 200, 0.3);
-            box-shadow: 0 20px 40px -10px #00000080, 0 0 0 1px #ff78b54d inset;
+            background: rgba(10, 10, 15, 0.7);
+            backdrop-filter: blur(14px) saturate(180%);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             position: sticky;
-            top: 1rem;
+            top: 0;
             z-index: 100;
+            margin: 0 1rem;
+            top: 1rem;
             border-radius: 60px;
-            margin: 0 1.5rem;
-            width: calc(100% - 3rem);
-            left: 1.5rem;
+            width: calc(100% - 2rem);
+            left: 1rem;
         }
 
         .logo {
-            font-size: 2.1rem;
-            background: linear-gradient(145deg, #ffe684, #ffb2f0, #a7d0ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #ffffff;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.8rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            font-weight: 600;
-            color: #f0d2ff;
-            font-size: 1.1rem;
-            transition: 0.2s;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .nav-links a::before {
-            content: '◆';
-            position: absolute;
-            left: -1.2rem;
-            opacity: 0;
-            transform: scale(0.5);
-            transition: 0.2s;
-            color: #ff99cc;
-        }
-
-        .nav-links a:hover::before {
-            opacity: 1;
-            transform: scale(1);
+            font-weight: 500;
+            color: #b0b0c0;
+            font-size: 1rem;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover {
-            color: white;
-            text-shadow: 0 0 12px #ffa2e0;
+            color: #ffffff;
         }
 
-        .btn-electric {
-            background: linear-gradient(145deg, #ff4380, #b14eff);
-            border: none;
-            padding: 0.7rem 2.2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            color: white;
-            box-shadow: 0 8px 0 #5f0066, 0 12px 30px #ff73b3;
-            transition: 0.12s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #e0e0f0;
+            transition: 0.2s;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            font-size: 0.95rem;
         }
 
-        .btn-electric:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 0 #5f0066, 0 20px 35px #ff3f9d;
+        .btn-outline:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         /* hero */
         .hero {
-            padding: 5rem 1rem 4rem;
+            padding: 5rem 2rem 4rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
@@ -165,51 +115,40 @@
         }
 
         .hero-content {
-            flex: 1 1 450px;
+            flex: 1 1 400px;
         }
 
         .hero-badge {
-            background: linear-gradient(115deg, #ffae00, #ff477b);
-            color: #140d1f;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #c0c0d0;
             display: inline-block;
-            padding: 0.6rem 2rem;
-            border-radius: 60px;
-            font-weight: 800;
-            font-size: 1.1rem;
+            padding: 0.4rem 1.4rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
             margin-bottom: 2rem;
-            box-shadow: 0 5px 0 #79006b, 0 15px 30px #ff78b3;
-            text-transform: uppercase;
-            border: 1px solid #ffda9e;
         }
 
         .hero-content h1 {
-            font-size: 4.8rem;
-            line-height: 1;
-            letter-spacing: -0.03em;
+            font-size: 3.8rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.02em;
             color: #ffffff;
-            text-shadow: 4px 4px 0 #c7247c, 8px 8px 0 rgba(0, 200, 255, 0.3);
             margin-bottom: 1.2rem;
         }
 
-        .grad-joris {
-            background: linear-gradient(145deg, #fcee96, #ffa6d2, #aae0ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
+        .hero-content h1 span {
+            color: #b0b0ff;
         }
 
         .hero-desc {
-            font-size: 1.4rem;
-            color: #d5c0ff;
-            max-width: 600px;
+            font-size: 1.2rem;
+            color: #a0a0b5;
+            max-width: 550px;
             margin: 1.5rem 0 2.5rem;
             font-weight: 400;
-            background: rgba(0,0,0,0.2);
-            padding: 1rem 2rem;
-            border-radius: 60px;
-            backdrop-filter: blur(8px);
-            border: 1px solid #ff98cf;
         }
 
         .hero-stats {
@@ -223,66 +162,55 @@
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(145deg, #ffcf8a, #ff9cee);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ffffff;
         }
 
         .stat-label {
-            font-size: 1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #c2abff;
+            letter-spacing: 0.5px;
+            color: #7f7f99;
         }
 
         .hero-visual {
-            flex: 0 0 340px;
-            background: linear-gradient(135deg, #f78fb0, #b28aff);
-            border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
-            padding: 1.5rem;
-            border: 5px solid #fdcde6;
-            box-shadow: 0 30px 0 #a8006b, 0 40px 60px #ff73d0;
+            flex: 0 0 300px;
+            background: #1a1a24;
+            border-radius: 30% 70% 40% 60% / 40% 40% 60% 60%;
+            padding: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
-            animation: crazyFloat 5s infinite alternate ease-in-out;
-        }
-
-        @keyframes crazyFloat {
-            0% { transform: translateY(0) rotate(-3deg) scale(1); }
-            100% { transform: translateY(-25px) rotate(5deg) scale(1.05); }
         }
 
         .avatar-icon {
-            font-size: 9rem;
-            color: #fffacd;
-            filter: drop-shadow(0 0 20px #ff51b0);
+            font-size: 8rem;
+            color: #c0c0ff;
+            opacity: 0.9;
         }
 
-        /* sections titles */
+        /* section titles */
         .section-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: white;
-            text-shadow: 3px 3px 0 #e5369a, 5px 5px 0 #3200b0;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.02em;
         }
 
         .section-sub {
-            color: #cdb4ff;
-            font-size: 1.3rem;
+            color: #9090a8;
+            font-size: 1.15rem;
             max-width: 700px;
             margin-bottom: 3rem;
-            border-left: 6px solid #ff77b8;
-            padding-left: 1.8rem;
-            background: rgba(0,0,0,0.2);
-            border-radius: 0 60px 60px 0;
+            border-left: 4px solid #3f3f60;
+            padding-left: 1.5rem;
         }
 
-        /* cards */
+        /* cards – dark, subtle */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -291,59 +219,52 @@
         }
 
         .card {
-            background: rgba(255, 240, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 2px solid #ffa0d07a;
-            border-radius: 50px;
+            background: #14141c;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
             padding: 2.5rem 2rem;
-            box-shadow: 0 25px 0 #a4006b, 0 30px 40px black;
-            transition: 0.15s;
+            transition: 0.2s;
         }
 
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: #ffdd88;
-            box-shadow: 0 35px 0 #a4006b, 0 40px 60px #ff40a0;
+            background: #1a1a26;
+            border-color: rgba(255, 255, 255, 0.08);
         }
 
         .card-icon {
-            font-size: 4rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
-            color: #ffeba0;
-            filter: drop-shadow(0 5px 0 #ff2882);
+            color: #b0b0ff;
         }
 
         .card h3 {
-            font-size: 2.2rem;
-            color: #ffedc0;
+            font-size: 1.9rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            color: #ffffff;
         }
 
         .card p {
-            color: #d7befc;
-            font-weight: 500;
+            color: #a0a0b5;
+            font-weight: 400;
         }
 
-        /* experience badge */
-        .exp-glow {
-            background: linear-gradient(90deg, #fb6a9f, #ffcd7e);
-            border-radius: 80px;
-            padding: 0.9rem 2.5rem 0.9rem 2rem;
+        /* experience */
+        .exp-badge {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 60px;
+            padding: 0.7rem 2.2rem 0.7rem 1.8rem;
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            border: 2px solid white;
-            color: #1a1127;
-            font-weight: 800;
-            font-size: 1.2rem;
+            gap: 0.8rem;
+            color: #d0d0e0;
+            font-weight: 500;
             margin-bottom: 2.5rem;
-            box-shadow: 0 12px 0 #a00068, 0 20px 30px #ff48a4;
         }
 
-        .exp-glow i {
-            background: black;
-            color: #ffc8e6;
-            border-radius: 50%;
-            padding: 0.5rem;
+        .exp-badge i {
+            color: #b0b0ff;
         }
 
         .timeline {
@@ -355,72 +276,75 @@
         .timeline-item {
             display: flex;
             gap: 2rem;
-            background: rgba(30, 10, 30, 0.5);
-            backdrop-filter: blur(20px);
+            background: #14141c;
+            border: 1px solid rgba(255, 255, 255, 0.03);
             padding: 2rem 2.5rem;
-            border-radius: 80px;
-            border: 2px solid #ffa0cb;
-            box-shadow: 0 20px 0 #720096, 0 20px 30px black;
+            border-radius: 40px;
+            transition: 0.15s;
+        }
+
+        .timeline-item:hover {
+            background: #191924;
         }
 
         .timeline-icon {
-            background: #ffa4ce;
-            width: 80px;
-            height: 80px;
-            border-radius: 40px;
+            background: #1f1f2e;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.4rem;
-            color: #1f002b;
-            border: 3px solid yellow;
+            font-size: 2rem;
+            color: #b0b0ff;
         }
 
         .timeline-content h4 {
-            font-size: 2rem;
-            color: #ffecb3;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.2rem;
         }
 
         .timeline-content .meta {
-            color: #fbb0d1;
-            font-weight: 700;
+            color: #88889c;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
         }
+
         .timeline-content p {
-            color: #cfb0ff;
+            color: #b0b0c4;
         }
 
         /* projects */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .project-card {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(18px);
-            border-radius: 50px;
+            background: #14141c;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
             overflow: hidden;
-            border: 2px solid #ff82c3;
-            box-shadow: 0 30px 0 #8800ab, 0 30px 50px black;
             transition: 0.2s;
         }
 
         .project-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            border-color: #fdd167;
-            box-shadow: 0 40px 0 #8800ab, 0 40px 70px #ff77b8;
+            background: #191926;
+            border-color: rgba(255, 255, 255, 0.08);
         }
 
         .project-img {
-            height: 200px;
-            background: linear-gradient(145deg, #f3a2c9, #a281ff);
+            height: 190px;
+            background: #1a1a28;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4.5rem;
-            color: #ffefc0;
-            border-bottom: 3px solid #ffcf8a;
+            font-size: 3.5rem;
+            color: #9090c0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .project-info {
@@ -428,8 +352,10 @@
         }
 
         .project-info h3 {
-            font-size: 2.2rem;
-            color: #fae1b0;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
         }
 
         .project-stack {
@@ -440,62 +366,54 @@
         }
 
         .stack-tag {
-            background: #ffbfe5;
-            border: 2px solid white;
-            color: #12012c;
-            padding: 0.3rem 1.4rem;
-            border-radius: 60px;
-            font-weight: 800;
-            font-size: 0.85rem;
+            background: #20202e;
+            color: #c0c0dd;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
         .project-link {
             text-decoration: none;
-            font-weight: 800;
-            color: #ffffb5;
+            font-weight: 600;
+            color: #b0b0ff;
             display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            background: #b14eff33;
-            padding: 0.7rem 1.8rem;
-            border-radius: 60px;
-            border: 2px solid #f2acff;
-            transition: 0.1s;
-            cursor: pointer;
+            gap: 0.5rem;
+            transition: 0.2s;
         }
 
         .project-link:hover {
-            background: #ff41a3;
-            color: black;
-            border-color: white;
+            color: #ffffff;
         }
 
-        /* contact footer */
+        /* footer/contact */
         .contact-section {
-            margin-top: 7rem;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(30px);
-            border-top: 4px solid #ffa5d2;
-            box-shadow: 0 -30px 0 #61007b, 0 -30px 60px black;
+            margin-top: 6rem;
+            background: #0a0a10;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding: 5rem 2rem;
-            border-radius: 6rem 6rem 0 0;
+            border-radius: 4rem 4rem 0 0;
         }
 
         .contact-container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
         .contact-container h2 {
-            font-size: 4rem;
-            color: #fff1b5;
-            text-shadow: 4px 4px 0 #d63c94;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
         }
 
         .contact-desc {
-            color: #fbd0ff;
-            font-size: 1.5rem;
+            color: #9090b0;
+            font-size: 1.3rem;
             margin: 1rem 0 3rem;
         }
 
@@ -507,49 +425,41 @@
         }
 
         .contact-link {
-            background: linear-gradient(145deg, #3d1c4a, #1e0b34);
-            border: 3px solid #ff98db;
-            padding: 1rem 2.5rem;
-            border-radius: 80px;
-            color: white;
+            background: #14141c;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.9rem 2.4rem;
+            border-radius: 60px;
+            color: #e0e0f0;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.3rem;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             transition: 0.2s;
-            box-shadow: 0 15px 0 #750084, 0 15px 30px black;
-            cursor: pointer;
         }
 
         .contact-link:hover {
-            background: #ff3e96;
-            color: black;
-            border-color: #ffea9e;
-            transform: translateY(-8px);
-            box-shadow: 0 23px 0 #750084, 0 25px 40px #ff41a0;
+            background: #1e1e2c;
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
         }
 
         .footer-copy {
             margin-top: 4rem;
-            color: #d3aaff;
-            font-size: 1.2rem;
-            font-weight: 600;
+            color: #6a6a80;
+            font-size: 0.95rem;
         }
 
         hr {
             border: none;
-            height: 4px;
-            background: linear-gradient(90deg, #ffa600, #ff66c7, #a269ff);
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
             margin: 2.5rem auto;
-            width: 70%;
-            border-radius: 10px;
+            width: 50%;
         }
     </style>
 </head>
 <body>
-    <div class="mesh-bg"></div>
     <div class="noise"></div>
 
     <nav class="navbar">
@@ -558,22 +468,21 @@
             <a href="#work">WORK</a>
             <a href="#studio">STUDIO</a>
             <a href="#contact">CONTACT</a>
-            <!-- Resume button triggers download -->
-            <a href="#" id="resumeBtn" class="btn-electric">RESUME</a>
+            <a href="#" id="resumeBtn" class="btn-outline">RESUME</a>
         </div>
     </nav>
 
     <main>
-        <!-- Hero with 1 year frontend BEST, project count updated to 1 in stats -->
+        <!-- Hero -->
         <div class="container hero">
             <div class="hero-content">
-                <span class="hero-badge"><i class="fas fa-bolt" style="margin-right: 8px;"></i> 1 YEAR · FRONT‑END SORCERER</span>
+                <span class="hero-badge"><i class="fas fa-code" style="margin-right: 6px;"></i> 1 YEAR · FRONT-END</span>
                 <h1>
-                    <span class="grad-joris">JORIS AMBEYI</span><br>
-                  
+                    <span>Joris Ambeyi</span><br>
+                    builds with precision
                 </h1>
                 <p class="hero-desc">
-                    One year of crafting high‑energy interfaces. I mix UI/UX with bold aesthetics — 1 major project & counting.
+                    One year of crafting clean, performant interfaces. Focus on user experience and modern design.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -582,54 +491,54 @@
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">1</span>
-                        <span class="stat-label">projects</span>
+                        <span class="stat-label">project</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">100%</span>
-                        <span class="stat-label">fresh UI</span>
+                        <span class="stat-label">dedicated</span>
                     </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="avatar-icon">
-                    <i class="fas fa-crown"></i>
+                    <i class="fas fa-user-astronaut"></i>
                 </div>
             </div>
         </div>
 
-        <!-- Best in frontend -->
+        <!-- Expertise -->
         <div class="container" id="work">
-            <div class="section-title">front‑end maximal</div>
-         
+            <div class="section-title">expertise</div>
+            <div class="section-sub">focused on front‑end development with an eye for detail.</div>
 
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-icon"><i class="fab fa-react"></i></div>
                     <h3>React & Vue</h3>
-                    <p>state wizards, hooks & composition. I make it sing.</p>
+                    <p>Component architecture, state management, and reactive interfaces.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-dragon"></i></div>
-                    <h3>bold UI/UX</h3>
-                    <p>attractive, loud, yet intuitive. users remember.</p>
+                    <div class="card-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h3>UI/UX design</h3>
+                    <p>Clean, intuitive layouts with a focus on accessibility and user flow.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-sparkles"></i></div>
-                    <h3>motion design</h3>
-                    <p>framer, gsap, css — buttery & dramatic.</p>
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>responsive</h3>
+                    <p>Pixel‑perfect across all devices, from mobile to desktop.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-mask"></i></div>
-                    <h3>a11y + attitude</h3>
-                    <p>accessible doesn't mean boring. inclusive & edgy.</p>
+                    <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>performance</h3>
+                    <p>Optimized code, fast load times, and smooth interactions.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 1 year experience timeline (removed 2022-2023 entry) -->
+        <!-- Experience -->
         <div class="container" id="studio">
-            <div class="exp-glow">
-                <i class="fas fa-calendar-alt"></i> exactly one year of domination — 2023 → 2024
+            <div class="exp-badge">
+                <i class="fas fa-calendar-alt"></i> one year of professional experience
             </div>
 
             <div class="timeline">
@@ -638,24 +547,24 @@
                     <div class="timeline-content">
                         <h4>front‑end developer</h4>
                         <div class="meta">Digitl Labs · Sep 2023 – present (8 months)</div>
-                        <p>design systems, vue + tailwind, micro-interactions.</p>
+                        <p>Developing component libraries and interactive dashboards.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fas fa-laptop"></i></div>
+                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
                     <div class="timeline-content">
                         <h4>intern → junior</h4>
-                        <div class="meta">Studio Noir </div>
-                        <p>react, figma, prototypes and user testing.</p>
+                        <div class="meta">Studio Noir · May 2023 – Aug 2023 (4 months)</div>
+                        <p>Built responsive landing pages and collaborated with designers.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Projects (only 1 project displayed as per "1 project") -->
+        <!-- Projects -->
         <div class="container" style="margin-top: 6rem;">
-            <div class="section-title">loud & proud work</div>
-            <div class="section-sub">frontend project that pops off.</div>
+            <div class="section-title">selected work</div>
+            <div class="section-sub">a recent project that reflects my approach.</div>
 
             <div class="project-grid" style="grid-template-columns: repeat(1, minmax(280px, 400px)); justify-content: center;">
                 <div class="project-card">
@@ -667,28 +576,27 @@
                             <span class="stack-tag">framer</span>
                             <span class="stack-tag">css</span>
                         </div>
-                        <p>vivid weather with animated gradients.</p>
-                        <!-- Live button opens GitHub (joe12) as a placeholder for live demo -->
-                        <a href="#" id="liveDemoBtn" class="project-link">LIVE →</a>
+                        <p>Minimal weather app with smooth animations and responsive design.</p>
+                        <a href="#" id="liveDemoBtn" class="project-link">live demo →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- CONTACT with REAL ACCOUNTS: github joe12, instagram jori.sjoe7, email jorisambeyi@gmail.com, and footer 2026 without #codevibes -->
+        <!-- Contact / Footer with updated email -->
         <div class="contact-section" id="contact">
             <div class="contact-container">
-                <h2>LET'S CONNECT</h2>
+                <h2>let’s connect</h2>
                 <div class="contact-desc">
-                    one year in, already iconic — follow my journey.
+                    based on 1 year of experience — always open to new opportunities.
                 </div>
                 <div class="contact-links">
-                    <!-- GitHub: joe12 (opens https://github.com/joe12) -->
+                    <!-- GitHub: joe12 -->
                     <a href="https://github.com/joe12" target="_blank" class="contact-link"><i class="fab fa-github"></i> joe12</a>
-                    <!-- Instagram: jori.sjoe7 (opens https://instagram.com/jori.sjoe7) -->
+                    <!-- Instagram: jori.sjoe7 -->
                     <a href="https://instagram.com/jori.sjoe7" target="_blank" class="contact-link"><i class="fab fa-instagram"></i> jori.sjoe7</a>
-                    <!-- Email: jorisambeyi@gmail.com (opens mail client) -->
-                    <a href="mailto:jorisambeyi32@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> jorisambeyi@gmail.com</a>
+                    <!-- Updated email: jorisambeyi32@gmail.com -->
+                    <a href="mailto:jorisambeyi32@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> jorisambeyi32@gmail.com</a>
                 </div>
                 <hr>
                 <div class="footer-copy">
@@ -699,53 +607,35 @@
     </main>
 
     <script>
-        // Make all buttons work
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // RESUME button (downloads a dummy PDF)
-            const resumeBtn = document.getElementById('resumeBtn');
-            if (resumeBtn) {
-                resumeBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    // Create a dummy text file as resume (since PDF would require hosting)
-                    const blob = new Blob(
-                        ["JORIS AMBEYI - FRONT-END DEVELOPER\n1 year experience\nSkills: React, Vue, UI/UX, motion design\nContact: jorisambeyi@gmail.com"], 
-                        { type: 'text/plain' }
-                    );
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = 'Joris_Ambeyi_Resume.txt';
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    window.URL.revokeObjectURL(url);
-                });
-            }
+        // Resume button
+        document.getElementById('resumeBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const blob = new Blob(
+                ["JORIS AMBEYI - FRONT-END DEVELOPER\n1 year experience\nSkills: React, Vue, UI/UX, responsive design\nContact: jorisambeyi32@gmail.com"], 
+                { type: 'text/plain' }
+            );
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Joris_Ambeyi_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        });
 
-            // LIVE DEMO button (opens GitHub profile joe12 as demo)
-            const liveBtn = document.getElementById('liveDemoBtn');
-            if (liveBtn) {
-                liveBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.open('https://github.com/joe12', '_blank');
-                });
-            }
+        // Live demo button (opens GitHub for now)
+        document.getElementById('liveDemoBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://github.com/joe12', '_blank');
+        });
 
-            // Navigation smooth scroll (WORK, STUDIO, CONTACT)
-            document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
